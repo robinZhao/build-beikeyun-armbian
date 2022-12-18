@@ -11,6 +11,7 @@ on:
 
 env:
   TZ: Asia/Shanghai
+  TRAVIS: true
 
 jobs:
   build:
