@@ -30,6 +30,7 @@ jobs:
       run: |
         pwd
         ls -l
+        chmod +x *.sh
         make build_armbian=y build
         ls -l output
     - name: Check space usage
