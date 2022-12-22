@@ -67,6 +67,8 @@ func_repack() {
 	[ ! -f "$dlpkg" ] && echo "dlpkg not found!" && return 1
 	rm -rf ${tmpdir}
 	mkdir ${tmpdir}
+        rm -rf ${output}
+	mkdir ${output}
 	echo "Extract xz...."
 	xz -dk $dlpkg
 	echo `pwd`
