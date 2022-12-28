@@ -2,7 +2,7 @@ DTB_NAME := rk3328-beikeyun-1296mhz.dtb
 DTB_DIR := flippy/dtbs/5.15.83
 
 DL := input
-WGET := wget -P -q --progress=dot $(DL)
+WGET := wget -P -q -nv $(DL)
 AXEL := axel -a -n4 -o $(DL)
 
 OUTPUT := output
