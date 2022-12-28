@@ -2,7 +2,7 @@ DTB_NAME := rk3328-beikeyun-1296mhz.dtb
 DTB_DIR := flippy/dtbs/5.15.83
 
 DL := input
-WGET := wget -P -q $(DL)
+WGET := wget -P -q --progress=dot $(DL)
 AXEL := axel -a -n4 -o $(DL)
 
 OUTPUT := output
@@ -29,7 +29,7 @@ endif
 
 ARMBIAN_PKG_%:
 	@( if [ ! -f "$(DL)/$($(@))" ]; then \
-		$(WGET) $(ARMBIAN_URL_BASE)/$($(@)) >>wget.log; \
+		$(WGET) $(ARMBIAN_URL_BASE)/$($(@))  \
 	fi )
 
 ARMBIAN_PKG_%_CLEAN:
