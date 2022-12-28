@@ -40,9 +40,7 @@ jobs:
     - name: Upload output directory
       uses: actions/upload-artifact@main
       with:
-        title: artifacts
-          - name: Packages
-            files: [output/*.xz]
+        path: output/*.xz
       
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
