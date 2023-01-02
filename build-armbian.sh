@@ -99,9 +99,7 @@ func_repack() {
 	imgname_new=`basename $imgfile | sed "s/${origin}/${target}/"`
 	echo "new image file: $imgname_new"
 	mv $imgfile ${output}/${imgname_new}
-	if [ -n "$TRAVIS_TAG" ]; then
-		xz -f -T 10 -v ${output}/${imgname_new}
-	fi
+	xz -f -T 10 -v ${output}/${imgname_new}
 	rm -rf ${tmpdir}
 }
 
