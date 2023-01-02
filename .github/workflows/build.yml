@@ -11,7 +11,7 @@ on:
 
 env:
   TZ: Asia/Shanghai
-  TRAVIS_TAG: true
+  TRAVIS_TAG: 'true'
 
 jobs:
   build:
