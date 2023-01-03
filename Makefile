@@ -19,9 +19,9 @@ build: $(TARGETS)
 clean: $(TARGETS:%=%_clean)
 	rm -f $(OUTPUT)/*.img $(OUTPUT)/*.xz
 
-ARMBIAN_PKG_DESKTOP := Armbian_22.11.1_Rock64_jammy_current_5.15.80_xfce_desktop.img.xz
+ARMBIAN_PKG_UBUNTU := Armbian_22.11.1_Rock64_jammy_current_5.15.80_xfce_desktop.img.xz
 ARMBIAN_PKG_DEBIAN := Armbian_22.11.1_Rock64_bullseye_current_5.15.80.img.xz
-ARMBIAN_PKG_MINI := Armbian_22.11.1_Rock64_bullseye_current_5.15.80_minimal.img.xz
+ARMBIAN_PKG_DEBIAN_MINI := Armbian_22.11.1_Rock64_bullseye_current_5.15.80_minimal.img.xz
 
 #ifneq ($(TRAVIS_TAG),)
 ARMBIAN_URL_BASE := https://dl.armbian.com/rock64/archive
@@ -38,7 +38,7 @@ ARMBIAN_PKG_%_CLEAN:
 	rm -f $(DL)/$($(@:_CLEAN=))
 
 ifeq ($(build_armbian),y)
-ARMBIAN_TARGETS := ARMBIAN_PKG_DEBIAN,ARMBIAN_PKG_MINI,ARMBIAN_PKG_DESKTOP
+ARMBIAN_TARGETS := ARMBIAN_PKG_DEBIAN ARMBIAN_PKG_DEBIAN_MINI ARMBIAN_PKG_UBUNTU
 ARMBIAN_UBOOT_MINILOADER := izumiko/loader
 ARMBIAN_UBOOT_ALL := flippy/loader/btld-rk3328.bin
 
