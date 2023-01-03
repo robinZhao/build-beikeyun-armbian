@@ -24,7 +24,7 @@ jobs:
       run: |
         sudo timedatectl set-timezone "$TZ"
         sudo apt-get update
-        sudo apt-get install  xz-utils p7zip-full mtools jq u-boot-tools html-xml-utils squashfs-tools bsdtar axel -y
+        sudo apt-get install  xz-utils p7zip-full mtools jq u-boot-tools html-xml-utils squashfs-tools libarchive-tools axel -y
     - name: Bilud Armbian
       run: |
         pwd
